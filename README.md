@@ -197,6 +197,18 @@ If port 8501 is already in use on your machine, pick another one:
 .venv/bin/streamlit run app/streamlit_app.py --server.port 8505
 ```
 
+### Deploying to Streamlit Community Cloud
+
+The repository ships a `requirements.txt` (Streamlit Cloud's dependency file) and the
+committed `artifacts/`, so a deployment needs no training step:
+
+1. Push the repository to GitHub (already set up for
+   `Abdelrahman-0-20/insurance-claim-prediction`).
+2. In Streamlit Community Cloud, create an app from that repo with main file
+   `app/streamlit_app.py`.
+3. If dependency installation ever fails, open "Manage app" to read the installer log;
+   `requirements.txt` is the file Streamlit Cloud installs from.
+
 Design: minimal, high-contrast layout, compact sidebar, strictly zero emojis (enforced by
 `tests/test_app_strings.py`).
 

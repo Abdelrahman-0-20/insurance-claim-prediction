@@ -16,13 +16,9 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression, TweedieRegressor
 from sklearn.model_selection import StratifiedKFold
 
-import optuna
-from optuna.samplers import TPESampler
-
 from src.evaluation.metrics import pr_auc, tweedie_deviance
 from src.features.build_features import build_preprocessor, transform_feature_names
 
-optuna.logging.set_verbosity(optuna.logging.WARNING)
 logger = logging.getLogger(__name__)
 
 TREE_FAMILIES = ("lightgbm", "xgboost", "catboost")
@@ -165,7 +161,8 @@ def weighted_cv(
 # --------------------------------------------------------------------------- #
 # Optuna tuning
 # --------------------------------------------------------------------------- #
-def suggest_params(trial: optuna.Trial, space: dict[str, Any] | None) -> dict[str, Any]:
+def suggest_params(trial, space: dict[str, Any] | None) -> dict[str, Any]:
+    """Map the config search space onto Optuna suggestions."""
     out: dict[str, Any] = {}
     for name, cfg in (space or {}).items():
         t = cfg["type"]
@@ -197,6 +194,10 @@ def tune_model(
     folds: int = 5,
 ) -> dict[str, Any]:
     """Run a seeded Optuna study for one model. Returns best params + trial stats."""
+    import optuna
+    from optuna.samplers import TPESampler
+
+    optuna.logging.set_verbosity(optuna.logging.WARNING)
     family, task = spec["family"], spec["task"]
     encoding = spec["encoding"]
     fixed = dict(spec.get("params", {}))
@@ -204,7 +205,7 @@ def tune_model(
     n_trials = int(spec.get("n_trials", 10))
     direction = "maximize" if task == "frequency" else "minimize"
 
-    def objective(trial: optuna.Trial) -> float:
+    def objective(trial) -> float:
         suggested = suggest_params(trial, space)
         params = {**fixed, **suggested}
         _, _, mean_metric = weighted_cv(
@@ -228,7 +229,7 @@ def tune_model(
 
     import time as _time
 
-    def _callback(study_: optuna.Study, trial: optuna.FrozenTrial) -> None:
+    def _callback(study_, trial) -> None:
         logger.info(
             "%s trial %d/%d: %s=%.5f (%.1fs)",
             name, trial.number + 1, n_trials,
