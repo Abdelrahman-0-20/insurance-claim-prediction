@@ -1,0 +1,45 @@
+{
+  "model": "catboost_tweedie",
+  "task": "pure_premium",
+  "family": "catboost",
+  "encoding": "native",
+  "best_params": {
+    "loss_function": "Tweedie:variance_power=1.5",
+    "learning_rate": 0.05,
+    "depth": 4,
+    "iterations": 146,
+    "verbose": false,
+    "random_seed": 42
+  },
+  "best_value": 87.92724121919504,
+  "direction": "MINIMIZE",
+  "n_trials": 6,
+  "search_space": {
+    "depth": {
+      "type": "int",
+      "low": 4,
+      "high": 8
+    },
+    "iterations": {
+      "type": "int",
+      "low": 100,
+      "high": 400
+    }
+  },
+  "oof": {
+    "tweedie_deviance": 86.76931325181697,
+    "normalized_gini": 0.1741166520220034
+  },
+  "tier_thresholds": {
+    "low_max": 165.801302103436,
+    "high_min": 240.8189752006756
+  },
+  "fold_metrics": [
+    87.2834979981995,
+    86.55926688428463,
+    86.15710579721505,
+    87.05430025150049,
+    86.78943956324977
+  ],
+  "oof_mean_cv_metric": 86.76872209888988
+}

@@ -1,0 +1,404 @@
+{
+  "logistic_regression": {
+    "model": "logistic_regression",
+    "task": "frequency",
+    "family": "glm",
+    "encoding": "target",
+    "best_params": {
+      "C": 3.871188084654565,
+      "max_iter": 3000
+    },
+    "best_value": 0.10256076061820865,
+    "direction": "MAXIMIZE",
+    "n_trials": 15,
+    "search_space": {
+      "C": {
+        "type": "float",
+        "low": 0.01,
+        "high": 5.0,
+        "log": true
+      }
+    },
+    "oof": {
+      "pr_auc": 0.09335866874159826,
+      "brier": 0.07087240979377213,
+      "normalized_gini": 0.14027681927484412
+    },
+    "tier_thresholds": {
+      "low_max": 0.05121442104363103,
+      "high_min": 0.07982358058261624
+    },
+    "fold_metrics": [
+      0.08170020425056898,
+      0.10111067071742996,
+      0.09952609822107902,
+      0.09772108305584869,
+      0.09947928611998243
+    ],
+    "oof_mean_cv_metric": 0.09590746847298182
+  },
+  "lightgbm_freq": {
+    "model": "lightgbm_freq",
+    "task": "frequency",
+    "family": "lightgbm",
+    "encoding": "native",
+    "best_params": {
+      "objective": "binary",
+      "metric": "auc",
+      "learning_rate": 0.013399060561509796,
+      "num_leaves": 30,
+      "min_child_samples": 72,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "deterministic": true,
+      "force_row_wise": true,
+      "verbosity": -1,
+      "n_estimators": 232
+    },
+    "best_value": 0.10268508342164775,
+    "direction": "MAXIMIZE",
+    "n_trials": 10,
+    "search_space": {
+      "num_leaves": {
+        "type": "int",
+        "low": 16,
+        "high": 64
+      },
+      "learning_rate": {
+        "type": "float",
+        "low": 0.01,
+        "high": 0.2,
+        "log": true
+      },
+      "min_child_samples": {
+        "type": "int",
+        "low": 10,
+        "high": 100
+      },
+      "n_estimators": {
+        "type": "int",
+        "low": 100,
+        "high": 400
+      }
+    },
+    "oof": {
+      "pr_auc": 0.09939120024076793,
+      "brier": 0.07076213657747334,
+      "normalized_gini": 0.1792299955287889
+    },
+    "tier_thresholds": {
+      "low_max": 0.039723431653642956,
+      "high_min": 0.08631372400256823
+    },
+    "fold_metrics": [
+      0.09400675260677359,
+      0.09785073776863008,
+      0.10458531375340055,
+      0.1059305636482746,
+      0.10145295456155116
+    ],
+    "oof_mean_cv_metric": 0.10076526446772598
+  },
+  "xgboost_freq": {
+    "model": "xgboost_freq",
+    "task": "frequency",
+    "family": "xgboost",
+    "encoding": "onehot",
+    "best_params": {
+      "objective": "binary:logistic",
+      "eval_metric": "auc",
+      "learning_rate": 0.013399060561509796,
+      "max_depth": 4,
+      "subsample": 0.8736932106048627,
+      "colsample_bytree": 0.8,
+      "tree_method": "hist",
+      "n_estimators": 232
+    },
+    "best_value": 0.10876018332280543,
+    "direction": "MAXIMIZE",
+    "n_trials": 10,
+    "search_space": {
+      "max_depth": {
+        "type": "int",
+        "low": 3,
+        "high": 8
+      },
+      "learning_rate": {
+        "type": "float",
+        "low": 0.01,
+        "high": 0.2,
+        "log": true
+      },
+      "subsample": {
+        "type": "float",
+        "low": 0.6,
+        "high": 1.0
+      },
+      "n_estimators": {
+        "type": "int",
+        "low": 100,
+        "high": 400
+      }
+    },
+    "oof": {
+      "pr_auc": 0.10155457063343704,
+      "brier": 0.07062850130005649,
+      "normalized_gini": 0.18989420535193163
+    },
+    "tier_thresholds": {
+      "low_max": 0.042834420688450336,
+      "high_min": 0.08650542795658112
+    },
+    "fold_metrics": [
+      0.09499080758392886,
+      0.1022483428278822,
+      0.10941413019708514,
+      0.10388366687146044,
+      0.10627846132841345
+    ],
+    "oof_mean_cv_metric": 0.10336308176175402
+  },
+  "catboost_freq": {
+    "model": "catboost_freq",
+    "task": "frequency",
+    "family": "catboost",
+    "encoding": "native",
+    "best_params": {
+      "loss_function": "Logloss",
+      "learning_rate": 0.13394334706750485,
+      "depth": 4,
+      "iterations": 280,
+      "verbose": false,
+      "random_seed": 42
+    },
+    "best_value": 0.10608878496229587,
+    "direction": "MAXIMIZE",
+    "n_trials": 8,
+    "search_space": {
+      "depth": {
+        "type": "int",
+        "low": 4,
+        "high": 8
+      },
+      "learning_rate": {
+        "type": "float",
+        "low": 0.01,
+        "high": 0.2,
+        "log": true
+      },
+      "iterations": {
+        "type": "int",
+        "low": 100,
+        "high": 400
+      }
+    },
+    "oof": {
+      "pr_auc": 0.10040226851596987,
+      "brier": 0.07084562683846016,
+      "normalized_gini": 0.19084761172485595
+    },
+    "tier_thresholds": {
+      "low_max": 0.037365027844556926,
+      "high_min": 0.08552589475439426
+    },
+    "fold_metrics": [
+      0.09259446763933235,
+      0.10465764564657148,
+      0.10306309180231374,
+      0.10397117967156835,
+      0.1058100909760618
+    ],
+    "oof_mean_cv_metric": 0.10201929514716954
+  },
+  "tweedie_glm": {
+    "model": "tweedie_glm",
+    "task": "pure_premium",
+    "family": "glm",
+    "encoding": "target",
+    "best_params": {
+      "power": 1.5,
+      "max_iter": 3000,
+      "alpha": 7.608829421251843
+    },
+    "best_value": 88.11530664023351,
+    "direction": "MINIMIZE",
+    "n_trials": 12,
+    "search_space": {
+      "alpha": {
+        "type": "float",
+        "low": 0.001,
+        "high": 10.0,
+        "log": true
+      }
+    },
+    "oof": {
+      "tweedie_deviance": 87.1180345633836,
+      "normalized_gini": 0.14167539132538773
+    },
+    "tier_thresholds": {
+      "low_max": 184.15728703852676,
+      "high_min": 237.7739293856273
+    },
+    "fold_metrics": [
+      87.60543328394097,
+      86.90334704996854,
+      86.3665823815228,
+      87.31503316580232,
+      87.39517590034171
+    ],
+    "oof_mean_cv_metric": 87.11711435631527
+  },
+  "lightgbm_tweedie": {
+    "model": "lightgbm_tweedie",
+    "task": "pure_premium",
+    "family": "lightgbm",
+    "encoding": "native",
+    "best_params": {
+      "objective": "tweedie",
+      "metric": "tweedie",
+      "tweedie_power": 1.5,
+      "learning_rate": 0.015958237752949748,
+      "num_leaves": 45,
+      "min_child_samples": 50,
+      "deterministic": true,
+      "force_row_wise": true,
+      "verbosity": -1,
+      "n_estimators": 146
+    },
+    "best_value": 116.66937046105463,
+    "direction": "MINIMIZE",
+    "n_trials": 8,
+    "search_space": {
+      "num_leaves": {
+        "type": "int",
+        "low": 16,
+        "high": 64
+      },
+      "learning_rate": {
+        "type": "float",
+        "low": 0.01,
+        "high": 0.2,
+        "log": true
+      },
+      "n_estimators": {
+        "type": "int",
+        "low": 100,
+        "high": 400
+      }
+    },
+    "oof": {
+      "tweedie_deviance": 88.21420873202331,
+      "normalized_gini": 0.18109784436376403
+    },
+    "tier_thresholds": {
+      "low_max": 101.14667910789746,
+      "high_min": 249.00033310312796
+    },
+    "fold_metrics": [
+      90.54564960205697,
+      86.78585882423754,
+      87.05814671873902,
+      87.76425685427175,
+      88.91118187411355
+    ],
+    "oof_mean_cv_metric": 88.21301877468377
+  },
+  "xgboost_tweedie": {
+    "model": "xgboost_tweedie",
+    "task": "pure_premium",
+    "family": "xgboost",
+    "encoding": "onehot",
+    "best_params": {
+      "objective": "reg:tweedie",
+      "tweedie_power": 1.5,
+      "learning_rate": 0.023993242906812727,
+      "max_depth": 3,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "tree_method": "hist",
+      "n_estimators": 210
+    },
+    "best_value": 94.37638015229257,
+    "direction": "MINIMIZE",
+    "n_trials": 8,
+    "search_space": {
+      "max_depth": {
+        "type": "int",
+        "low": 3,
+        "high": 8
+      },
+      "learning_rate": {
+        "type": "float",
+        "low": 0.01,
+        "high": 0.2,
+        "log": true
+      },
+      "n_estimators": {
+        "type": "int",
+        "low": 100,
+        "high": 400
+      }
+    },
+    "oof": {
+      "tweedie_deviance": 86.49750393757124,
+      "normalized_gini": 0.19121023521700253
+    },
+    "tier_thresholds": {
+      "low_max": 115.59131240844727,
+      "high_min": 256.306396484375
+    },
+    "fold_metrics": [
+      87.11198313034244,
+      85.97218411138412,
+      86.1576013590765,
+      86.44132525119088,
+      86.80176912230122
+    ],
+    "oof_mean_cv_metric": 86.49697259485903
+  },
+  "catboost_tweedie": {
+    "model": "catboost_tweedie",
+    "task": "pure_premium",
+    "family": "catboost",
+    "encoding": "native",
+    "best_params": {
+      "loss_function": "Tweedie:variance_power=1.5",
+      "learning_rate": 0.05,
+      "depth": 4,
+      "iterations": 146,
+      "verbose": false,
+      "random_seed": 42
+    },
+    "best_value": 87.92724121919504,
+    "direction": "MINIMIZE",
+    "n_trials": 6,
+    "search_space": {
+      "depth": {
+        "type": "int",
+        "low": 4,
+        "high": 8
+      },
+      "iterations": {
+        "type": "int",
+        "low": 100,
+        "high": 400
+      }
+    },
+    "oof": {
+      "tweedie_deviance": 86.76931325181697,
+      "normalized_gini": 0.1741166520220034
+    },
+    "tier_thresholds": {
+      "low_max": 165.801302103436,
+      "high_min": 240.8189752006756
+    },
+    "fold_metrics": [
+      87.2834979981995,
+      86.55926688428463,
+      86.15710579721505,
+      87.05430025150049,
+      86.78943956324977
+    ],
+    "oof_mean_cv_metric": 86.76872209888988
+  }
+}

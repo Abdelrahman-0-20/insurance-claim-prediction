@@ -1,0 +1,55 @@
+{
+  "model": "lightgbm_tweedie",
+  "task": "pure_premium",
+  "family": "lightgbm",
+  "encoding": "native",
+  "best_params": {
+    "objective": "tweedie",
+    "metric": "tweedie",
+    "tweedie_power": 1.5,
+    "learning_rate": 0.015958237752949748,
+    "num_leaves": 45,
+    "min_child_samples": 50,
+    "deterministic": true,
+    "force_row_wise": true,
+    "verbosity": -1,
+    "n_estimators": 146
+  },
+  "best_value": 116.66937046105463,
+  "direction": "MINIMIZE",
+  "n_trials": 8,
+  "search_space": {
+    "num_leaves": {
+      "type": "int",
+      "low": 16,
+      "high": 64
+    },
+    "learning_rate": {
+      "type": "float",
+      "low": 0.01,
+      "high": 0.2,
+      "log": true
+    },
+    "n_estimators": {
+      "type": "int",
+      "low": 100,
+      "high": 400
+    }
+  },
+  "oof": {
+    "tweedie_deviance": 88.21420873202331,
+    "normalized_gini": 0.18109784436376403
+  },
+  "tier_thresholds": {
+    "low_max": 101.14667910789746,
+    "high_min": 249.00033310312796
+  },
+  "fold_metrics": [
+    90.54564960205697,
+    86.78585882423754,
+    87.05814671873902,
+    87.76425685427175,
+    88.91118187411355
+  ],
+  "oof_mean_cv_metric": 88.21301877468377
+}

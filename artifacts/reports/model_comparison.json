@@ -1,0 +1,86 @@
+{
+  "champion": "xgboost_freq",
+  "test_rows": 8748,
+  "models": {
+    "catboost_freq": {
+      "task": "frequency",
+      "family": "catboost",
+      "encoding": "native",
+      "pr_auc": 0.10027835061365123,
+      "roc_auc": 0.5947686653075595,
+      "brier": 0.07048322466794443,
+      "normalized_gini": 0.18953972143143788,
+      "tweedie_deviance": 86.32125121653293
+    },
+    "catboost_tweedie": {
+      "task": "pure_premium",
+      "family": "catboost",
+      "encoding": "native",
+      "pr_auc": 0.10641564131618725,
+      "roc_auc": 0.5988135639041154,
+      "brier": null,
+      "normalized_gini": 0.19764667809552044,
+      "tweedie_deviance": 59.338648961089
+    },
+    "lightgbm_freq": {
+      "task": "frequency",
+      "family": "lightgbm",
+      "encoding": "native",
+      "pr_auc": 0.1017388478187685,
+      "roc_auc": 0.5976709903059838,
+      "brier": 0.0701969781348216,
+      "normalized_gini": 0.1953424470166312,
+      "tweedie_deviance": 85.95786845356392
+    },
+    "lightgbm_tweedie": {
+      "task": "pure_premium",
+      "family": "lightgbm",
+      "encoding": "native",
+      "pr_auc": 0.10154918539486717,
+      "roc_auc": 0.5943184704206952,
+      "brier": null,
+      "normalized_gini": 0.18864174212031745,
+      "tweedie_deviance": 56.102962447913235
+    },
+    "logistic_regression": {
+      "task": "frequency",
+      "family": "glm",
+      "encoding": "target",
+      "pr_auc": 0.09245295846835333,
+      "roc_auc": 0.5690177820748746,
+      "brier": 0.0704542379071638,
+      "normalized_gini": 0.13803555563958925,
+      "tweedie_deviance": 86.8225115117429
+    },
+    "tweedie_glm": {
+      "task": "pure_premium",
+      "family": "glm",
+      "encoding": "target",
+      "pr_auc": 0.09054047763516442,
+      "roc_auc": 0.5657747627104481,
+      "brier": null,
+      "normalized_gini": 0.1315495169107385,
+      "tweedie_deviance": 59.94628956273925
+    },
+    "xgboost_freq": {
+      "task": "frequency",
+      "family": "xgboost",
+      "encoding": "onehot",
+      "pr_auc": 0.10354476588385114,
+      "roc_auc": 0.596357289764414,
+      "brier": 0.07015676708944729,
+      "normalized_gini": 0.19271835132313864,
+      "tweedie_deviance": 86.01695765652973
+    },
+    "xgboost_tweedie": {
+      "task": "pure_premium",
+      "family": "xgboost",
+      "encoding": "onehot",
+      "pr_auc": 0.09947946917082232,
+      "roc_auc": 0.5923920674902228,
+      "brier": null,
+      "normalized_gini": 0.18479003810455055,
+      "tweedie_deviance": 58.466822731020486
+    }
+  }
+}

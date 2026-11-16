@@ -1,0 +1,38 @@
+{
+  "model": "logistic_regression",
+  "task": "frequency",
+  "family": "glm",
+  "encoding": "target",
+  "best_params": {
+    "C": 3.871188084654565,
+    "max_iter": 3000
+  },
+  "best_value": 0.10256076061820865,
+  "direction": "MAXIMIZE",
+  "n_trials": 15,
+  "search_space": {
+    "C": {
+      "type": "float",
+      "low": 0.01,
+      "high": 5.0,
+      "log": true
+    }
+  },
+  "oof": {
+    "pr_auc": 0.09335866874159826,
+    "brier": 0.07087240979377213,
+    "normalized_gini": 0.14027681927484412
+  },
+  "tier_thresholds": {
+    "low_max": 0.05121442104363103,
+    "high_min": 0.07982358058261624
+  },
+  "fold_metrics": [
+    0.08170020425056898,
+    0.10111067071742996,
+    0.09952609822107902,
+    0.09772108305584869,
+    0.09947928611998243
+  ],
+  "oof_mean_cv_metric": 0.09590746847298182
+}

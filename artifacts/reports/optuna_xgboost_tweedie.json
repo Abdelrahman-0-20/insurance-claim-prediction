@@ -1,0 +1,53 @@
+{
+  "model": "xgboost_tweedie",
+  "task": "pure_premium",
+  "family": "xgboost",
+  "encoding": "onehot",
+  "best_params": {
+    "objective": "reg:tweedie",
+    "tweedie_power": 1.5,
+    "learning_rate": 0.023993242906812727,
+    "max_depth": 3,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "tree_method": "hist",
+    "n_estimators": 210
+  },
+  "best_value": 94.37638015229257,
+  "direction": "MINIMIZE",
+  "n_trials": 8,
+  "search_space": {
+    "max_depth": {
+      "type": "int",
+      "low": 3,
+      "high": 8
+    },
+    "learning_rate": {
+      "type": "float",
+      "low": 0.01,
+      "high": 0.2,
+      "log": true
+    },
+    "n_estimators": {
+      "type": "int",
+      "low": 100,
+      "high": 400
+    }
+  },
+  "oof": {
+    "tweedie_deviance": 86.49750393757124,
+    "normalized_gini": 0.19121023521700253
+  },
+  "tier_thresholds": {
+    "low_max": 115.59131240844727,
+    "high_min": 256.306396484375
+  },
+  "fold_metrics": [
+    87.11198313034244,
+    85.97218411138412,
+    86.1576013590765,
+    86.44132525119088,
+    86.80176912230122
+  ],
+  "oof_mean_cv_metric": 86.49697259485903
+}

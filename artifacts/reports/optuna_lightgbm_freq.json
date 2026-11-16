@@ -1,0 +1,62 @@
+{
+  "model": "lightgbm_freq",
+  "task": "frequency",
+  "family": "lightgbm",
+  "encoding": "native",
+  "best_params": {
+    "objective": "binary",
+    "metric": "auc",
+    "learning_rate": 0.013399060561509796,
+    "num_leaves": 30,
+    "min_child_samples": 72,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "deterministic": true,
+    "force_row_wise": true,
+    "verbosity": -1,
+    "n_estimators": 232
+  },
+  "best_value": 0.10268508342164775,
+  "direction": "MAXIMIZE",
+  "n_trials": 10,
+  "search_space": {
+    "num_leaves": {
+      "type": "int",
+      "low": 16,
+      "high": 64
+    },
+    "learning_rate": {
+      "type": "float",
+      "low": 0.01,
+      "high": 0.2,
+      "log": true
+    },
+    "min_child_samples": {
+      "type": "int",
+      "low": 10,
+      "high": 100
+    },
+    "n_estimators": {
+      "type": "int",
+      "low": 100,
+      "high": 400
+    }
+  },
+  "oof": {
+    "pr_auc": 0.09939120024076793,
+    "brier": 0.07076213657747334,
+    "normalized_gini": 0.1792299955287889
+  },
+  "tier_thresholds": {
+    "low_max": 0.039723431653642956,
+    "high_min": 0.08631372400256823
+  },
+  "fold_metrics": [
+    0.09400675260677359,
+    0.09785073776863008,
+    0.10458531375340055,
+    0.1059305636482746,
+    0.10145295456155116
+  ],
+  "oof_mean_cv_metric": 0.10076526446772598
+}

@@ -1,0 +1,38 @@
+{
+  "model": "tweedie_glm",
+  "task": "pure_premium",
+  "family": "glm",
+  "encoding": "target",
+  "best_params": {
+    "power": 1.5,
+    "max_iter": 3000,
+    "alpha": 7.608829421251843
+  },
+  "best_value": 88.11530664023351,
+  "direction": "MINIMIZE",
+  "n_trials": 12,
+  "search_space": {
+    "alpha": {
+      "type": "float",
+      "low": 0.001,
+      "high": 10.0,
+      "log": true
+    }
+  },
+  "oof": {
+    "tweedie_deviance": 87.1180345633836,
+    "normalized_gini": 0.14167539132538773
+  },
+  "tier_thresholds": {
+    "low_max": 184.15728703852676,
+    "high_min": 237.7739293856273
+  },
+  "fold_metrics": [
+    87.60543328394097,
+    86.90334704996854,
+    86.3665823815228,
+    87.31503316580232,
+    87.39517590034171
+  ],
+  "oof_mean_cv_metric": 87.11711435631527
+}

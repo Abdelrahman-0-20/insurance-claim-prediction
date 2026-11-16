@@ -1,0 +1,184 @@
+# Single source of truth for the Insurance Claims Prediction pipeline.
+# All randomness derives from seed: 42.
+
+seed: 42
+
+data:
+  raw_path: data/raw/claims.csv
+  fallback: openml                 # used when raw_path is absent
+  openml_freq: freMTPL2freq
+  openml_sev: freMTPL2sev
+  expected_severity: 3000.0        # currency units; assumption for local data (no claim amounts)
+  drop_zero_exposure: true
+  target_column: claim_status
+  exposure_column: exposure
+  id_column: policy_id
+  severity_column: claim_amount
+  aliases:                         # source column -> canonical column
+    subscription_length: exposure
+
+split:
+  train: 0.70
+  val: 0.15
+  test: 0.15
+  stratify_target: claim_status
+
+features:
+  domain_ratios: true
+  exclude_columns: [policy_id, claim_status, claim_amount, exposure]
+
+tuning:
+  cv_folds: 5
+  subsample_rows: 6000             # seeded cap for CV wall-clock; final fit uses full train+val
+
+metrics:
+  tweedie_power: 1.5
+  calibration_bins: 10
+  lift_deciles: 10
+
+risk_tiers:
+  quantiles: [0.25, 0.75]          # applied to OOF validation predictions (approved adjustment)
+
+models:
+  logistic_regression:
+    task: frequency
+    family: glm
+    encoding: target
+    n_trials: 15
+    params:
+      C: 0.5
+      max_iter: 3000
+    search_space:
+      C: {type: float, low: 0.01, high: 5.0, log: true}
+
+  lightgbm_freq:
+    task: frequency
+    family: lightgbm
+    encoding: native
+    n_trials: 10
+    params:
+      objective: binary
+      metric: auc
+      learning_rate: 0.05
+      num_leaves: 31
+      min_child_samples: 50
+      subsample: 0.8
+      colsample_bytree: 0.8
+      deterministic: true
+      force_row_wise: true
+      verbosity: -1
+    search_space:
+      num_leaves: {type: int, low: 16, high: 64}
+      learning_rate: {type: float, low: 0.01, high: 0.2, log: true}
+      min_child_samples: {type: int, low: 10, high: 100}
+      n_estimators: {type: int, low: 100, high: 400}
+
+  xgboost_freq:
+    task: frequency
+    family: xgboost
+    encoding: onehot
+    n_trials: 10
+    params:
+      objective: binary:logistic
+      eval_metric: auc
+      learning_rate: 0.05
+      max_depth: 5
+      subsample: 0.8
+      colsample_bytree: 0.8
+      tree_method: hist
+      n_estimators: 300
+    search_space:
+      max_depth: {type: int, low: 3, high: 8}
+      learning_rate: {type: float, low: 0.01, high: 0.2, log: true}
+      subsample: {type: float, low: 0.6, high: 1.0}
+      n_estimators: {type: int, low: 100, high: 400}
+
+  catboost_freq:
+    task: frequency
+    family: catboost
+    encoding: native
+    n_trials: 8
+    params:
+      loss_function: Logloss
+      learning_rate: 0.05
+      depth: 6
+      iterations: 300
+      verbose: False
+      random_seed: 42
+      allow_writing_files: False
+    search_space:
+      depth: {type: int, low: 4, high: 8}
+      learning_rate: {type: float, low: 0.01, high: 0.2, log: true}
+      iterations: {type: int, low: 100, high: 400}
+
+  tweedie_glm:
+    task: pure_premium
+    family: glm
+    encoding: target
+    n_trials: 12
+    params:
+      power: 1.5
+      max_iter: 3000
+      alpha: 0.0
+    search_space:
+      alpha: {type: float, low: 0.001, high: 10.0, log: true}
+
+  lightgbm_tweedie:
+    task: pure_premium
+    family: lightgbm
+    encoding: native
+    n_trials: 8
+    params:
+      objective: tweedie
+      metric: tweedie
+      tweedie_power: 1.5
+      learning_rate: 0.05
+      num_leaves: 31
+      min_child_samples: 50
+      deterministic: true
+      force_row_wise: true
+      verbosity: -1
+    search_space:
+      num_leaves: {type: int, low: 16, high: 64}
+      learning_rate: {type: float, low: 0.01, high: 0.2, log: true}
+      n_estimators: {type: int, low: 100, high: 400}
+
+  xgboost_tweedie:
+    task: pure_premium
+    family: xgboost
+    encoding: onehot
+    n_trials: 8
+    params:
+      objective: reg:tweedie
+      tweedie_power: 1.5
+      learning_rate: 0.05
+      max_depth: 5
+      subsample: 0.8
+      colsample_bytree: 0.8
+      tree_method: hist
+      n_estimators: 300
+    search_space:
+      max_depth: {type: int, low: 3, high: 8}
+      learning_rate: {type: float, low: 0.01, high: 0.2, log: true}
+      n_estimators: {type: int, low: 100, high: 400}
+
+  catboost_tweedie:
+    task: pure_premium
+    family: catboost
+    encoding: native
+    n_trials: 6
+    params:
+      loss_function: Tweedie:variance_power=1.5
+      learning_rate: 0.05
+      depth: 6
+      iterations: 300
+      verbose: False
+      random_seed: 42
+      allow_writing_files: False
+    search_space:
+      depth: {type: int, low: 4, high: 8}
+      iterations: {type: int, low: 100, high: 400}
+
+app:
+  page_title: "Insurance Claims Prediction"
+  champion_selection: oof_pr_auc   # frequency models ranked by OOF PR-AUC

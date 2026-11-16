@@ -1,0 +1,52 @@
+{
+  "model": "catboost_freq",
+  "task": "frequency",
+  "family": "catboost",
+  "encoding": "native",
+  "best_params": {
+    "loss_function": "Logloss",
+    "learning_rate": 0.13394334706750485,
+    "depth": 4,
+    "iterations": 280,
+    "verbose": false,
+    "random_seed": 42
+  },
+  "best_value": 0.10608878496229587,
+  "direction": "MAXIMIZE",
+  "n_trials": 8,
+  "search_space": {
+    "depth": {
+      "type": "int",
+      "low": 4,
+      "high": 8
+    },
+    "learning_rate": {
+      "type": "float",
+      "low": 0.01,
+      "high": 0.2,
+      "log": true
+    },
+    "iterations": {
+      "type": "int",
+      "low": 100,
+      "high": 400
+    }
+  },
+  "oof": {
+    "pr_auc": 0.10040226851596987,
+    "brier": 0.07084562683846016,
+    "normalized_gini": 0.19084761172485595
+  },
+  "tier_thresholds": {
+    "low_max": 0.037365027844556926,
+    "high_min": 0.08552589475439426
+  },
+  "fold_metrics": [
+    0.09259446763933235,
+    0.10465764564657148,
+    0.10306309180231374,
+    0.10397117967156835,
+    0.1058100909760618
+  ],
+  "oof_mean_cv_metric": 0.10201929514716954
+}

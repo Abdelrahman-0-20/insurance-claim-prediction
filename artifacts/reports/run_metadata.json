@@ -1,0 +1,35 @@
+{
+  "seed": 42,
+  "config_path": "configs/config.yaml",
+  "dataset_source": "data/raw/claims.csv",
+  "n_rows": 58316,
+  "n_features_model": 45,
+  "dropped_zero_exposure": 276,
+  "expected_severity": 3000.0,
+  "split": {
+    "seed": 42,
+    "hash": "6a03cee8a7da7592",
+    "n_train": 40820,
+    "n_val": 8748,
+    "n_test": 8748,
+    "claim_rate_train": 0.0641842234198922,
+    "claim_rate_val": 0.06424325560128029,
+    "claim_rate_test": 0.06424325560128029,
+    "n_rows_total": 58316
+  },
+  "champion": "xgboost_freq",
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "sklearn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10",
+    "optuna": "5.1.0",
+    "shap": "0.54.1"
+  },
+  "trained_at": "2026-11-16T15:36:59.277786+00:00",
+  "exposure_weighting": "sample_weight=exposure; natural class priors for frequency",
+  "risk_tier_source": "out-of-fold predictions on train+val (P25/P75)"
+}

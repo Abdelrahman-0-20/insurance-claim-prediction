@@ -1,0 +1,348 @@
+{
+  "subscription_length": {
+    "kind": "numeric",
+    "default": 5.8,
+    "min": 0.1,
+    "max": 14.0
+  },
+  "vehicle_age": {
+    "kind": "numeric",
+    "default": 1.2,
+    "min": 0.0,
+    "max": 20.0
+  },
+  "customer_age": {
+    "kind": "numeric",
+    "default": 44.0,
+    "min": 35.0,
+    "max": 75.0
+  },
+  "region_code": {
+    "kind": "categorical",
+    "default": "C8",
+    "categories": [
+      "C1",
+      "C10",
+      "C11",
+      "C12",
+      "C13",
+      "C14",
+      "C15",
+      "C16",
+      "C17",
+      "C18",
+      "C19",
+      "C2",
+      "C20",
+      "C21",
+      "C22",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7",
+      "C8",
+      "C9"
+    ]
+  },
+  "region_density": {
+    "kind": "numeric",
+    "default": 8794.0,
+    "min": 290.0,
+    "max": 73430.0
+  },
+  "segment": {
+    "kind": "categorical",
+    "default": "B2",
+    "categories": [
+      "A",
+      "B1",
+      "B2",
+      "C1",
+      "C2",
+      "Utility"
+    ]
+  },
+  "model": {
+    "kind": "categorical",
+    "default": "M1",
+    "categories": [
+      "M1",
+      "M10",
+      "M11",
+      "M2",
+      "M3",
+      "M4",
+      "M5",
+      "M6",
+      "M7",
+      "M8",
+      "M9"
+    ]
+  },
+  "fuel_type": {
+    "kind": "categorical",
+    "default": "Petrol",
+    "categories": [
+      "CNG",
+      "Diesel",
+      "Petrol"
+    ]
+  },
+  "max_torque": {
+    "kind": "categorical",
+    "default": "113Nm@4400rpm",
+    "categories": [
+      "113Nm@4400rpm",
+      "170Nm@4000rpm",
+      "200Nm@1750rpm",
+      "200Nm@3000rpm",
+      "250Nm@2750rpm",
+      "60Nm@3500rpm",
+      "82.1Nm@3400rpm",
+      "85Nm@3000rpm",
+      "91Nm@4250rpm"
+    ]
+  },
+  "max_power": {
+    "kind": "categorical",
+    "default": "88.50bhp@6000rpm",
+    "categories": [
+      "113.45bhp@4000rpm",
+      "118.36bhp@5500rpm",
+      "40.36bhp@6000rpm",
+      "55.92bhp@5300rpm",
+      "61.68bhp@6000rpm",
+      "67.06bhp@5500rpm",
+      "88.50bhp@6000rpm",
+      "88.77bhp@4000rpm",
+      "97.89bhp@3600rpm"
+    ]
+  },
+  "engine_type": {
+    "kind": "categorical",
+    "default": "F8D Petrol Engine",
+    "categories": [
+      "1.0 SCe",
+      "1.2 L K Series Engine",
+      "1.2 L K12N Dualjet",
+      "1.5 L U2 CRDi",
+      "1.5 Turbocharged Revotorq",
+      "1.5 Turbocharged Revotron",
+      "F8D Petrol Engine",
+      "G12B",
+      "K Series Dual jet",
+      "K10C",
+      "i-DTEC"
+    ]
+  },
+  "airbags": {
+    "kind": "numeric",
+    "default": 2.0,
+    "min": 1.0,
+    "max": 6.0
+  },
+  "is_esc": {
+    "kind": "categorical",
+    "default": "No",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "is_adjustable_steering": {
+    "kind": "categorical",
+    "default": "Yes",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "is_tpms": {
+    "kind": "categorical",
+    "default": "No",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "is_parking_sensors": {
+    "kind": "categorical",
+    "default": "Yes",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "is_parking_camera": {
+    "kind": "categorical",
+    "default": "No",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "rear_brakes_type": {
+    "kind": "categorical",
+    "default": "Drum",
+    "categories": [
+      "Disc",
+      "Drum"
+    ]
+  },
+  "displacement": {
+    "kind": "numeric",
+    "default": 1197.0,
+    "min": 796.0,
+    "max": 1498.0
+  },
+  "cylinder": {
+    "kind": "numeric",
+    "default": 4.0,
+    "min": 3.0,
+    "max": 4.0
+  },
+  "transmission_type": {
+    "kind": "categorical",
+    "default": "Manual",
+    "categories": [
+      "Automatic",
+      "Manual"
+    ]
+  },
+  "steering_type": {
+    "kind": "categorical",
+    "default": "Power",
+    "categories": [
+      "Electric",
+      "Manual",
+      "Power"
+    ]
+  },
+  "turning_radius": {
+    "kind": "numeric",
+    "default": 4.8,
+    "min": 4.5,
+    "max": 5.2
+  },
+  "length": {
+    "kind": "numeric",
+    "default": 3845.0,
+    "min": 3445.0,
+    "max": 4300.0
+  },
+  "width": {
+    "kind": "numeric",
+    "default": 1735.0,
+    "min": 1475.0,
+    "max": 1811.0
+  },
+  "gross_weight": {
+    "kind": "numeric",
+    "default": 1335.0,
+    "min": 1051.0,
+    "max": 1720.0
+  },
+  "is_front_fog_lights": {
+    "kind": "categorical",
+    "default": "Yes",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "is_rear_window_wiper": {
+    "kind": "categorical",
+    "default": "No",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "is_rear_window_washer": {
+    "kind": "categorical",
+    "default": "No",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "is_rear_window_defogger": {
+    "kind": "categorical",
+    "default": "No",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "is_brake_assist": {
+    "kind": "categorical",
+    "default": "Yes",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "is_power_door_locks": {
+    "kind": "categorical",
+    "default": "Yes",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "is_central_locking": {
+    "kind": "categorical",
+    "default": "Yes",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "is_power_steering": {
+    "kind": "categorical",
+    "default": "Yes",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "is_driver_seat_height_adjustable": {
+    "kind": "categorical",
+    "default": "Yes",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "is_day_night_rear_view_mirror": {
+    "kind": "categorical",
+    "default": "No",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "is_ecw": {
+    "kind": "categorical",
+    "default": "Yes",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "is_speed_alert": {
+    "kind": "categorical",
+    "default": "Yes",
+    "categories": [
+      "No",
+      "Yes"
+    ]
+  },
+  "ncap_rating": {
+    "kind": "numeric",
+    "default": 2.0,
+    "min": 0.0,
+    "max": 5.0
+  }
+}

@@ -1,0 +1,15 @@
+.venv/
+.mplconfig/
+train_run.log
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.streamlit/
+
+# dataset (acquired locally: copied by make setup, or auto-fetched from OpenML)
+Insurance claims data.csv
+data/raw/
+
+# CatBoost training artifacts (disabled in config via allow_writing_files)
+catboost_info/

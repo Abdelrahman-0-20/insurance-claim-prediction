@@ -1,0 +1,186 @@
+{
+  "champion": "xgboost_freq",
+  "policy_index": 9,
+  "contributions": [
+    {
+      "feature": "subscription_length",
+      "contribution": -0.7299977540969849
+    },
+    {
+      "feature": "region_code",
+      "contribution": 0.04162221124624921
+    },
+    {
+      "feature": "vehicle_customer_age_ratio",
+      "contribution": -0.03123713657259941
+    },
+    {
+      "feature": "cylinder",
+      "contribution": 0.023529142141342163
+    },
+    {
+      "feature": "vehicle_age",
+      "contribution": -0.017283817753195763
+    },
+    {
+      "feature": "region_density",
+      "contribution": 0.0172404907643795
+    },
+    {
+      "feature": "customer_age",
+      "contribution": 0.012777667492628098
+    },
+    {
+      "feature": "width",
+      "contribution": 0.01035498920828104
+    },
+    {
+      "feature": "segment",
+      "contribution": 0.008338298886883422
+    },
+    {
+      "feature": "max_torque",
+      "contribution": 0.0053172554853517795
+    },
+    {
+      "feature": "steering_type",
+      "contribution": 0.005200768762733787
+    },
+    {
+      "feature": "is_adjustable_steering",
+      "contribution": 0.00518014415865764
+    },
+    {
+      "feature": "max_power",
+      "contribution": 0.003245193263865076
+    },
+    {
+      "feature": "length",
+      "contribution": 0.0030209003016352654
+    },
+    {
+      "feature": "is_front_fog_lights",
+      "contribution": 0.0024628836290503386
+    },
+    {
+      "feature": "gross_weight",
+      "contribution": -0.00240563927218318
+    },
+    {
+      "feature": "ncap_rating",
+      "contribution": -0.0019892381969839334
+    },
+    {
+      "feature": "turning_radius",
+      "contribution": 0.0017221735324710608
+    },
+    {
+      "feature": "weight_power_ratio",
+      "contribution": 0.0014410619623959064
+    },
+    {
+      "feature": "displacement",
+      "contribution": 0.0011848702561110258
+    },
+    {
+      "feature": "driver_vehicle_age_ratio",
+      "contribution": 0.0009711841121315956
+    },
+    {
+      "feature": "fuel_type",
+      "contribution": 0.00048628245713189244
+    },
+    {
+      "feature": "is_day_night_rear_view_mirror",
+      "contribution": 0.000472034327685833
+    },
+    {
+      "feature": "specific_power",
+      "contribution": -0.0003988152602687478
+    },
+    {
+      "feature": "engine_type",
+      "contribution": 0.0002694128197617829
+    },
+    {
+      "feature": "airbags",
+      "contribution": 0.00011120450653834268
+    },
+    {
+      "feature": "is_parking_camera",
+      "contribution": 0.00010794402260216884
+    },
+    {
+      "feature": "model",
+      "contribution": -6.533729174407199e-05
+    },
+    {
+      "feature": "is_esc",
+      "contribution": -5.030393003835343e-05
+    },
+    {
+      "feature": "transmission_type",
+      "contribution": 1.4816185284871608e-05
+    },
+    {
+      "feature": "is_brake_assist",
+      "contribution": -2.115681127179414e-06
+    },
+    {
+      "feature": "power_bhp",
+      "contribution": 9.627474355511367e-07
+    },
+    {
+      "feature": "torque_nm",
+      "contribution": 0.0
+    },
+    {
+      "feature": "is_parking_sensors",
+      "contribution": 0.0
+    },
+    {
+      "feature": "is_tpms",
+      "contribution": 0.0
+    },
+    {
+      "feature": "rear_brakes_type",
+      "contribution": 0.0
+    },
+    {
+      "feature": "is_rear_window_wiper",
+      "contribution": 0.0
+    },
+    {
+      "feature": "is_rear_window_defogger",
+      "contribution": 0.0
+    },
+    {
+      "feature": "is_rear_window_washer",
+      "contribution": 0.0
+    },
+    {
+      "feature": "is_central_locking",
+      "contribution": 0.0
+    },
+    {
+      "feature": "is_power_door_locks",
+      "contribution": 0.0
+    },
+    {
+      "feature": "is_power_steering",
+      "contribution": 0.0
+    },
+    {
+      "feature": "is_driver_seat_height_adjustable",
+      "contribution": 0.0
+    },
+    {
+      "feature": "is_ecw",
+      "contribution": 0.0
+    },
+    {
+      "feature": "is_speed_alert",
+      "contribution": 0.0
+    }
+  ]
+}

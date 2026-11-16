@@ -1,0 +1,11 @@
+{
+  "seed": 42,
+  "hash": "6a03cee8a7da7592",
+  "n_train": 40820,
+  "n_val": 8748,
+  "n_test": 8748,
+  "claim_rate_train": 0.0641842234198922,
+  "claim_rate_val": 0.06424325560128029,
+  "claim_rate_test": 0.06424325560128029,
+  "n_rows_total": 58316
+}

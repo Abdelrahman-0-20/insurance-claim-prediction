@@ -1,0 +1,59 @@
+{
+  "model": "xgboost_freq",
+  "task": "frequency",
+  "family": "xgboost",
+  "encoding": "onehot",
+  "best_params": {
+    "objective": "binary:logistic",
+    "eval_metric": "auc",
+    "learning_rate": 0.013399060561509796,
+    "max_depth": 4,
+    "subsample": 0.8736932106048627,
+    "colsample_bytree": 0.8,
+    "tree_method": "hist",
+    "n_estimators": 232
+  },
+  "best_value": 0.10876018332280543,
+  "direction": "MAXIMIZE",
+  "n_trials": 10,
+  "search_space": {
+    "max_depth": {
+      "type": "int",
+      "low": 3,
+      "high": 8
+    },
+    "learning_rate": {
+      "type": "float",
+      "low": 0.01,
+      "high": 0.2,
+      "log": true
+    },
+    "subsample": {
+      "type": "float",
+      "low": 0.6,
+      "high": 1.0
+    },
+    "n_estimators": {
+      "type": "int",
+      "low": 100,
+      "high": 400
+    }
+  },
+  "oof": {
+    "pr_auc": 0.10155457063343704,
+    "brier": 0.07062850130005649,
+    "normalized_gini": 0.18989420535193163
+  },
+  "tier_thresholds": {
+    "low_max": 0.042834420688450336,
+    "high_min": 0.08650542795658112
+  },
+  "fold_metrics": [
+    0.09499080758392886,
+    0.1022483428278822,
+    0.10941413019708514,
+    0.10388366687146044,
+    0.10627846132841345
+  ],
+  "oof_mean_cv_metric": 0.10336308176175402
+}
