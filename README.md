@@ -1,5 +1,7 @@
 # Insurance Claims Prediction
 
+**Live app:** https://insurance-claim-prediction-fmpggerpqpnf3vqlyxuk27.streamlit.app/
+
 A modular, production-grade Python repository for motor insurance claims prediction:
 config-driven training, strict leakage prevention, actuarial evaluation
 (PR-AUC, ROC-AUC, calibration/Brier, Normalized Gini, cumulative lift, Tweedie deviance),
